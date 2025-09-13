@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+  {% block title %}Cadastre-se!{% endblock title %}
+  
+{% block content %}
+  
+  <div class="body">
+    
+    <div class="container">
+    <!-- Formulário Signup -->
+    <div id="signupForm">
+      <h2>Cadastro</h2>
+      {% for message in messages %}
+          <p style="color:#e63946; text-align: center;">{{message}}</p>
+      {% endfor %}
+      <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" autocomplete="off" required>
+        <input type="email" name="email" placeholder="Email" required autocomplete="off">
+        <input type="password" name="password1" placeholder="Senha" required autocomplete="new-password">
+        <input type="password" name='password2' placeholder="Confirmar Senha" required autocomplete="new-password">
+        <button>Cadastrar</button>
+      </form>
+      
+      <div class="toggle" style="display: flex; justify-content: center; gap: .4rem;">
+        Já tem conta? <a href="{% url 'entrar' %}">Entrar</a>
+      </div>
+    </div>
+  </div>
+        
+  </div>
+  
+{% endblock content %}
+
+

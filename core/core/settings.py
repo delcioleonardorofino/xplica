@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-##5fx%$jhdxhv64z&ewigevb4j0b_d_&fewdty0@w%c+-(%wtw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.43.235', '127.0.0.1']
 
 
 # Application definition
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'exams'
+    'exams',
+    'autenticacao'
 ]
 
 MIDDLEWARE = [
@@ -113,6 +114,14 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+# Onde o Django vai coletar todos os estáticos (quando rodar collectstatic)
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Onde procurar por arquivos estáticos além dos apps
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'

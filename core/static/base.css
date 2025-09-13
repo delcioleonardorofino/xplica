@@ -1,0 +1,208 @@
+body { background-color: #19191a; color: #ffffff; }
+#logo{
+    font-size: 1.8rem;
+    font-weight: bolder !important;
+}
+    
+    #nav{padding-left: .8rem; padding-right: .8rem; border-bottom: 3px solid;
+    border-image: radial-gradient(circle at center, #12f14a, #1E90FF) 1; 
+    transition: transform 0.2s ease, filter 0.3s ease;}
+
+    #nav:hover{
+        border-bottom: 3px solid;
+        border-image: linear-gradient(to right, #12f14a, #1E90FF) 1; 
+    }
+    .navbar-dark .navbar-nav .nav-link.active { color: #34c759; }
+    .navbar-dark .navbar-nav .nav-link:hover { color: white; }
+    .btn-primary { background: radial-gradient(circle at top left, #12f14a, #1E90FF);
+     color: white; font-weight: bolder; border: none; padding: 12px 28px;
+     transition: transform 0.2s ease, filter 0.3s ease;}
+    .btn-primary:hover { filter: brightness(1.1);  /* deixa o botão mais vibrante */
+    transform: translateY(-2px); /* efeito sutil de elevação */ }
+    .btn-success { background-color: #1E90FF; border-color: #10a37f; font-weight: bolder;}
+    .btn-success:hover { background-color: #1874CD; border-color: #43d9ad; }
+    .btn-signup {
+        font-weight: bold;
+    }
+    .btn-signup:hover {
+        background-color: #28a745 !important;
+    }
+    #nav-features{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap:.3rem;
+    }
+
+    #hero{
+        margin-top: 5rem !important;
+    }
+
+    /* Cards */
+    .card-dark {
+      background-color: #1f1f21;
+      color: #ccc;
+/*      border: 1px solid ghostwhite;*/
+      border-radius: 12px;
+      transition: transform 0.2s;
+    }
+    .card-dark:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      border: 1px solid #007bff;
+    }
+
+    .card-dark:hover h5{
+      color: #fff;
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #1E90FF;
+      width: 50px;           /* largura do ícone */
+      height: 50px;          /* altura do ícone */
+      margin: 0 auto 15px;   /* centraliza horizontalmente e adiciona espaço abaixo */
+      display: block;        /* transforma SVG em bloco para centralizar */
+      /* color: #34c759; */
+    }
+
+    @media(max-width: 767px){
+        #logo{
+        font-size: 1.4rem;
+        }
+
+        .row:last-child{
+            margin-bottom: 2rem
+        }
+
+        #hero{
+            margin-top: 3.5rem !important;
+        }
+
+        div .cards{
+            margin-left: 1rem;  /* espaçamento à esquerda */
+            margin-right: 1rem; /* espaçamento à direita */
+        }
+
+        .border{
+            margin-top: 2.7rem;
+        }
+
+        }
+
+    .card-icon:hover{
+      color:#43d9ad;
+    }
+
+    div .cards{
+        border-top: 1px solid #34c759;
+    }
+
+
+/*SignUp & LoginPage*/
+.body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .login_container {
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .body h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #e5e5e5;
+    }
+
+    .body input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .body input:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0,123,255,0.4);
+    }
+
+    .body button {
+      width: 100%;
+      padding: 14px;
+      background: #1E90FF;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .body button:hover {
+      background: #0056b3;
+    }
+
+    
+    /* Responsividade */
+    @media (max-width: 480px) {
+        .body{
+            padding: 30px;
+            align-items: normal;
+            justify-content: normal;
+        }
+      .body .container {
+        padding: 20px;
+      }
+
+      .body h2 {
+        font-size: 20px;
+      }
+
+      .body input, button {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .body .toggle {
+        font-size: 12px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .body .container {
+        max-width: 450px;
+      }
+    }
+
+/*Footer*/
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.border{
+    margin-top: 3.2rem;
+    width: 90%;
+    border-top: 1px solid #1E90FF;
+}
+

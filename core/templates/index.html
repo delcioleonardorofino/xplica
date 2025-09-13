@@ -1,0 +1,111 @@
+  {% extends "base.html" %}
+  
+
+  {% block content %}
+
+  <!-- Hero Section -->
+  <div class="container text-center mt-5" id="hero">
+    {% if user.is_authenticated %}
+        <h1>Kmk, {{user.username.capitalize}}?!</h1>
+    {% else %}
+        <h1>Bem-vindo ao Simul<span style="color:#12f14a;">Ex</span></h1>
+    {% endif %}
+    <p>Prepare-se para o exame de admissão</p>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#regrasModal">Começar Agora!</button>
+  </div>
+
+  <!-- Cards Section -->
+  <div class="container mt-5 cards" style=" padding-top: .8rem;">
+    <div class="row g-4 text-center" style="display:flex; justify-content: center;">
+        
+      <!-- Simulados -->
+        
+         <div class="col-md-3">
+            <a href="{% url 'simulados' %}" style="text-decoration: none;">
+                <div class="card card-dark p-4 h-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20l9-5-9-5-9 5 9 5z" />
+                    </svg>
+
+                <h5>Simulados</h5>
+                <p>Pratique com exames reais e veja seu desempenho.</p>
+                </div>
+            </a>
+        </div>
+        
+      <!-- Matérias -->
+      <div class="col-md-3">
+        
+        <a href="#" style="text-decoration: none;">
+            <div class="card card-dark p-4 h-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h8M8 16h8M8 8h8M4 6h16v12H4V6z"/>
+                </svg>
+                <h5>Matérias</h5>
+                <p>Explore as disciplinas e revise conteúdos importantes.</p>
+            </div>
+        </a>
+        
+      </div>
+
+      <!-- Cadastro -->
+    {% if user.is_authenticated %}
+
+    {% else %}
+      <div class="col-md-3" >
+        <a href="{% url 'entrar' %}" style="text-decoration: none;">
+            <div class="card card-dark p-4 h-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A12.042 12.042 0 0112 15a12.042 12.042 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <h5>Entrar</h5>
+                <p>Faça login na sua conta para salvar seu progresso e resultados.</p>
+            </div>
+        </a>
+      </div>
+    {% endif %}
+
+      <!-- Sobre -->
+      <div class="col-md-3">
+        <a href="#" style="text-decoration: none;">
+            <div class="card card-dark p-4 h-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                    <line x1="12" y1="8" x2="12" y2="12" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="12" cy="16" r="1" fill="currentColor"/>
+                </svg>
+                <h5>Sobre</h5>
+                <p>Saiba mais sobre a plataforma e seus benefícios.</p>
+            </div>
+         </a>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <!-- Modal de Regras -->
+  <div class="modal fade" id="regrasModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title">Regras do Simulado</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-start">
+          <ul>
+            <li>O simulado pode ser de disciplina única ou integrado de no máximo 2 disciplinas.</li>
+            <li>O tempo limite pode ser de 90 min. se selecionada apenas 1 disciplina, ou 180 min. se selecionadas 2.</li>
+            <li>Responda todas as perguntas!</li>
+            <li>O resultado será exibido no final.</li>
+            <li style="text-decoration: underline;">Recomendamos que Entre usando a tua conta para veres teu progresso e poderes avaliar teu percurso.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <a href="{% url 'simulados' %}" class="btn btn-success">Simular</a>
+          <a href="{% url 'entrar' %}" id=btn-modal class="btn btn-signup" style="background-color: #34c759; color: white;">Entrar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}
